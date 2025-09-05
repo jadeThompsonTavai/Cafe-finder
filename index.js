@@ -2,7 +2,7 @@ const apikey = 'AIzaSyDI9vZzyRYNRt8Tf29bAmemX1ngLgXAyU4';
    const useProxy = true;
     const proxy = "https://cors-anywhere.herokuapp.com/";
 
-    function getLocationCachedOrNew() {
+    function getLocation() {
       const cache = JSON.parse(localStorage.getItem('cachedLocation') || '{}');
       const now = Date.now();
       if (cache.timestamp && now - cache.timestamp < 10 * 60 * 1000) {
@@ -18,7 +18,7 @@ const apikey = 'AIzaSyDI9vZzyRYNRt8Tf29bAmemX1ngLgXAyU4';
     }
 
     async function useLocation(lat, lng) {
-      const endpoint = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=1500&type=cafe&key=${apiKey}`;
+      const endpoint = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lng}&radius=1500&type=cafe&key=${apikey}`;
       const url = useProxy ? proxy + endpoint : endpoint;
       try {
         const response = await fetch(url);
