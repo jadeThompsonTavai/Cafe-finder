@@ -1,4 +1,4 @@
-   const apikey = ProcessingInstruction.env.apikey;
+   const apikey = ProcessingInstruction.env.MY_API_KEY;
    const useProxy = true;
     const proxy = "https://cors-anywhere.herokuapp.com/";
 
