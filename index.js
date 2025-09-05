@@ -1,4 +1,3 @@
-const apikey = 'AIzaSyDI9vZzyRYNRt8Tf29bAmemX1ngLgXAyU4';
    const useProxy = true;
     const proxy = "https://cors-anywhere.herokuapp.com/";
 
