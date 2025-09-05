@@ -16,7 +16,7 @@ function getLocation() {
             const lat = pos.coords.latitude;
             const lng = pos.coords.longitude;
 
-            localStorage.setItem('cachedLocation', JSON.strignify({lat, lng, timestamp: now}));
+            localStorage.setItem('cachedLocation', JSON.stringify({lat, lng, timestamp: now}));
             useLocation(lat, lng);
         }, () => alert("Location access denied or unavailable."));
     }
