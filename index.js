@@ -55,21 +55,7 @@ function displayCards(cafes) {
         
     });
 
-    const hammertime = new Hammer(wrapper);
-  hammertime.on('swipeleft', () => {
-    wrapper.style.transform = 'translateX(-150%) rotate(-15deg)';
-    wrapper.style.opacity = 0;
-    setTimeout(() => wrapper.remove(), 100);
-  });
-  hammertime.on('swiperight', () => {
-    saveCafe(JSON.stringify(cafeData));
-    wrapper.style.transform = 'translateX(150%) rotate(15deg)';
-    wrapper.style.opacity = 0;
-    setTimeout(() => wrapper.remove(), 100);
-  });
     
-}
-
     const card = document.createElement('div');
 card.className = 'location-card';
 
@@ -93,6 +79,22 @@ card.innerHTML = `
 
 wrapper.appendChild(card);
 container.appendChild(wrapper);
+
+    const hammertime = new Hammer(wrapper);
+  hammertime.on('swipeleft', () => {
+    wrapper.style.transform = 'translateX(-150%) rotate(-15deg)';
+    wrapper.style.opacity = 0;
+    setTimeout(() => wrapper.remove(), 100);
+  });
+  hammertime.on('swiperight', () => {
+    saveCafe(JSON.stringify(cafeData));
+    wrapper.style.transform = 'translateX(150%) rotate(15deg)';
+    wrapper.style.opacity = 0;
+    setTimeout(() => wrapper.remove(), 100);
+  });
+    
+}
+
 
 function saveCafe(cafeJSON) {
   const cafe = JSON.parse(cafeJSON);
