@@ -56,7 +56,7 @@ const apikey = 'AIzaSyDeYMMUrJfFcUCpIipiQzyE1jcRcKzND-4';
 
 
         const imgUrl = cafe.photos?.[0]?.photo_reference
-          ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${cafe.photos[0].photo_reference}&key=${apiKey}`
+          ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${cafe.photos[0].photo_reference}&key=${apikey}`
           : 'https://via.placeholder.com/250x150?text=No+Image';
 
         const cafeData = {
